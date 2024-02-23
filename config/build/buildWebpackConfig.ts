@@ -1,9 +1,9 @@
 import {buildOptions} from "./types/buildOptions";
 import webpack from "webpack";
-import path from "path";
 import {buildLoaders} from "./buildLoaders";
 import {buildResolvers} from "./buildResolvers";
 import buildPlugins from "./buildPlugins";
+import buildDevServer from "./buildDevServer";
 
 export default function buildWebpackConfig(options: buildOptions):webpack.Configuration{
 
@@ -21,6 +21,8 @@ export default function buildWebpackConfig(options: buildOptions):webpack.Config
             rules: buildLoaders()
         },
         resolve: buildResolvers(),
-        plugins: buildPlugins(options)
+        plugins: buildPlugins(options),
+        devtool:options.isDev?"inline-source-map":undefined,
+        devServer:options.isDev?buildDevServer(options):undefined,
     }
 }
