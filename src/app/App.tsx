@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/aliases/classNames";
 import {AppRouter} from "app/providers/router";
+import Navbar from "widgets/Navbar";
 
 const App = () => {
     const {theme,toggleTheme} = useTheme();
@@ -14,8 +14,7 @@ const App = () => {
             }}>
                 click
             </button>
-            <Link to="/about">aboutPage</Link>
-            <Link to="/">mainPage</Link>
+            <Navbar/>
             <AppRouter>
 
             </AppRouter>
