@@ -5,6 +5,7 @@ import { FC } from "react";
 export enum AppLinkTheme {
   PRIMARY = "primary",
   SECONDARY = "secondary",
+  TERTIARY = "tertiary",
 }
 interface AppLinkProps extends LinkProps {
   className?: string;

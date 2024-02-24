@@ -14,6 +14,9 @@ export const Navbar = ({ className }: NavbarProps) => {
       <AppLink to="/" theme={AppLinkTheme.SECONDARY}>
         mainPage
       </AppLink>
+      <AppLink to="/card" theme={AppLinkTheme.TERTIARY}>
+        cardPage
+      </AppLink>
     </div>
   );
 };
